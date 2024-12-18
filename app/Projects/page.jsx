@@ -89,28 +89,28 @@ const Projects = () => {
 		},
 	]; // Applications
 	const Games = [
-		{
-			_id: {
-				$oid: "66d0c7405dfe6b308267c93d",
-			},
-			id: "g12",
-			name: "G-12",
-			desc: "G-12 is a command line based Python project. This project contains a set games for different purposes, such as fun games and mind games.",
-			lang: ["Python", "MySQL"],
-			logo: "https://i.postimg.cc/Hx427zYy/g12.png",
-			link: "",
-		},
-		{
-			_id: {
-				$oid: "66d0c7405dfe6b308267c93e",
-			},
-			id: "g12_plus",
-			name: "G-12 Plus",
-			desc: "G-12 is a Graphical User Interface based Python project. Using libraries like tkinter and customtkinter, this project aims to improve the original G-12 project, by adding an interactable GUI.",
-			lang: ["Python", "SQLite"],
-			logo: "https://i.postimg.cc/BbSC5Fbw/g12Plus.png",
-			link: "",
-		},
+		// {
+		// 	_id: {
+		// 		$oid: "66d0c7405dfe6b308267c93d",
+		// 	},
+		// 	id: "g12",
+		// 	name: "G-12",
+		// 	desc: "G-12 is a command line based Python project. This project contains a set games for different purposes, such as fun games and mind games.",
+		// 	lang: ["Python", "MySQL"],
+		// 	logo: "https://i.postimg.cc/Hx427zYy/g12.png",
+		// 	link: "",
+		// },
+		// {
+		// 	_id: {
+		// 		$oid: "66d0c7405dfe6b308267c93e",
+		// 	},
+		// 	id: "g12_plus",
+		// 	name: "G-12 Plus",
+		// 	desc: "G-12 is a Graphical User Interface based Python project. Using libraries like tkinter and customtkinter, this project aims to improve the original G-12 project, by adding an interactable GUI.",
+		// 	lang: ["Python", "SQLite"],
+		// 	logo: "https://i.postimg.cc/BbSC5Fbw/g12Plus.png",
+		// 	link: "",
+		// },
 		{
 			_id: {
 				$oid: "66d0d39f5dfe6b308267c94c",
@@ -178,7 +178,10 @@ const Projects = () => {
 						<h1 className="langar text-amber-400 text-lg lg:text-xl">WEBSITES</h1>
 						<div className="text-center">
 							{currentWebs.map((web) => (
-								<div key={web._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+								<div
+									key={web._id.$oid}
+									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
+								>
 									<Image src={web.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg text-justify sm:ml-4">
@@ -214,11 +217,19 @@ const Projects = () => {
 							<div className="pagination">
 								{totalWebPages > 1 ? (
 									<>
-										<button disabled={curWebPage <= 1} onClick={() => handleWebPageChange(curWebPage - 1)} className="paginationButton active">
+										<button
+											disabled={curWebPage <= 1}
+											onClick={() => handleWebPageChange(curWebPage - 1)}
+											className="paginationButton active"
+										>
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curWebPage}/${totalWebPages}`}</button>
-										<button className="paginationButton active" disabled={curWebPage >= totalWebPages} onClick={() => handleWebPageChange(curWebPage + 1)}>
+										<button
+											className="paginationButton active"
+											disabled={curWebPage >= totalWebPages}
+											onClick={() => handleWebPageChange(curWebPage + 1)}
+										>
 											{">"}
 										</button>
 									</>
@@ -229,12 +240,16 @@ const Projects = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className="col-2">
 					<div className="mainContainer">
 						<h1 className="langar text-amber-400 text-lg lg:text-xl">APPLICATIONS</h1>
 						<div className="text-center">
 							{currentApps.map((app) => (
-								<div key={app._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+								<div
+									key={app._id.$oid}
+									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
+								>
 									<Image src={app.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg text-justify sm:ml-4">
@@ -270,11 +285,19 @@ const Projects = () => {
 							<div className="pagination">
 								{totalAppPages > 1 ? (
 									<>
-										<button disabled={curAppPage <= 1} onClick={() => handleAppPageChange(curAppPage - 1)} className="paginationButton active">
+										<button
+											disabled={curAppPage <= 1}
+											onClick={() => handleAppPageChange(curAppPage - 1)}
+											className="paginationButton active"
+										>
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curAppPage}/${totalAppPages}`}</button>
-										<button className="paginationButton active" disabled={curAppPage >= totalAppPages} onClick={() => handleAppPageChange(curAppPage + 1)}>
+										<button
+											className="paginationButton active"
+											disabled={curAppPage >= totalAppPages}
+											onClick={() => handleAppPageChange(curAppPage + 1)}
+										>
 											{">"}
 										</button>
 									</>
@@ -284,11 +307,15 @@ const Projects = () => {
 							</div>
 						</div>
 					</div>
+
 					<div className="mainContainer">
 						<h1 className="langar text-amber-400 text-lg lg:text-xl">GAMES</h1>
 						<div className="text-center">
 							{currentGames.map((game) => (
-								<div key={game._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+								<div
+									key={game._id.$oid}
+									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
+								>
 									<Image src={game.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg text-justify sm:ml-4">
@@ -324,11 +351,19 @@ const Projects = () => {
 							<div className="pagination">
 								{totalGamePages > 1 ? (
 									<>
-										<button disabled={curGamePage <= 1} onClick={() => handleGamePageChange(curGamePage - 1)} className="paginationButton active">
+										<button
+											disabled={curGamePage <= 1}
+											onClick={() => handleGamePageChange(curGamePage - 1)}
+											className="paginationButton active"
+										>
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curGamePage}/${totalGamePages}`}</button>
-										<button className="paginationButton active" disabled={curGamePage >= totalGamePages} onClick={() => handleGamePageChange(curGamePage + 1)}>
+										<button
+											className="paginationButton active"
+											disabled={curGamePage >= totalGamePages}
+											onClick={() => handleGamePageChange(curGamePage + 1)}
+										>
 											{">"}
 										</button>
 									</>

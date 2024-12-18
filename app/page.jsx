@@ -56,6 +56,7 @@ const Main = () => {
 						</ul>
 					</div>
 				</div>
+
 				<div className="col-2">
 					<div className="mainContainer">
 						<h1 className="langar text-amber-400 text-lg lg:text-xl">EDUCATION</h1>
