@@ -94,6 +94,7 @@ const Typewriter = ({
 		randomizeTyping,
 		pauseDuration,
 		clearInstantly,
+		playSound,
 	]);
 
 	return (

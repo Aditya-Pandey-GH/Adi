@@ -14,7 +14,9 @@ const NotFound = () => {
 				</div>
 				<div>
 					<div className="text-center">
-						<p>Oops! The page you're looking for doesn't exist.</p>
+						<p>
+							Oops! The page you are looking for does not exist.
+						</p>
 						<p className="mb-6 text-sm">
 							It might have been removed, or you may have entered
 							the wrong URL.
