@@ -47,7 +47,7 @@ const Projects = () => {
 		// 		"React",
 		// 		"Cascading Style Sheets (CSS)",
 		// 	],
-		// 	logo: image("projs", "prePlace"),
+		// 	logo: "",
 		// 	link: "",
 		// },
 		{
@@ -92,7 +92,7 @@ const Projects = () => {
 		// 		"React",
 		// 		"Casacading Style Sheets (CSS)",
 		// 	],
-		// 	logo: image("projs", "healthElevator"),
+		// 	logo: "",
 		// 	link: "",
 		// },
 	]; // Websites

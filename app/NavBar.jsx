@@ -48,7 +48,17 @@ const NavBar = () => {
 		},
 	];
 
-	const curPage = Pages.find((page) => page.path === pathname);
+	let curPage = Pages.find((page) => page.path === pathname);
+	if (curPage === undefined) {
+		curPage = {
+			id: "default",
+			name: "Adi",
+			logo: "https://i.postimg.cc/P5RZzv06/logo.png",
+			path: pathname,
+		};
+	}
+	// console.log(curPage.name);
+
 	const handleNavigation = (path) => {
 		if (path !== pathname) {
 			router.replace(path); // Replace the current history entry
@@ -61,16 +71,20 @@ const NavBar = () => {
 				{/* PC Navbar */}
 				<div className="overflow-y-auto max-h-screen hidden md:block">
 					{/* Current Page */}
-					<div className="w-fit m-auto flex justify-center items-center my-2 py-4 px-6 space-x-2 text-base bg-gray-800 rounded-lg">
-						<Image
-							src={curPage.logo}
-							width={200}
-							height={200}
-							alt=""
-							className="w-10"
-						/>
-						<div>{curPage.name}</div>
-					</div>
+					{curPage !== undefined && (
+						<>
+							<div className="w-fit m-auto flex justify-center items-center my-2 py-4 px-6 space-x-2 text-base bg-gray-800 rounded-lg">
+								<Image
+									src={curPage.logo}
+									width={200}
+									height={200}
+									alt=""
+									className="w-10"
+								/>
+								<div>{curPage.name}</div>
+							</div>
+						</>
+					)}
 					{/* All Pages */}
 					<div className="langar mt-4">
 						{Pages.map((page) => {
