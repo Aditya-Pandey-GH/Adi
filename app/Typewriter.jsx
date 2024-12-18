@@ -44,11 +44,7 @@ const Typewriter = ({
 		const currentString = profsArr[currentIndex];
 		let timeout;
 
-		const getTypingSpeed = () =>
-			randomizeTyping
-				? Math.random() * (typingSpeed - typingSpeed / 2) +
-				  typingSpeed / 2
-				: typingSpeed;
+		const getTypingSpeed = () => (randomizeTyping ? Math.random() * (typingSpeed - typingSpeed / 2) + typingSpeed / 2 : typingSpeed);
 
 		if (!isDeleting) {
 			// Typing logic
@@ -65,9 +61,7 @@ const Typewriter = ({
 			if (clearInstantly) {
 				setText("");
 				setIsDeleting(false);
-				setCurrentIndex((prevIndex) =>
-					loop ? (prevIndex + 1) % profsArr.length : prevIndex + 1
-				);
+				setCurrentIndex((prevIndex) => (loop ? (prevIndex + 1) % profsArr.length : prevIndex + 1));
 			} else {
 				if (text.length > 0) {
 					timeout = setTimeout(() => {
@@ -75,27 +69,13 @@ const Typewriter = ({
 					}, deletingSpeed);
 				} else {
 					setIsDeleting(false);
-					setCurrentIndex((prevIndex) =>
-						loop ? (prevIndex + 1) % profsArr.length : prevIndex + 1
-					);
+					setCurrentIndex((prevIndex) => (loop ? (prevIndex + 1) % profsArr.length : prevIndex + 1));
 				}
 			}
 		}
 
 		return () => clearTimeout(timeout);
-	}, [
-		text,
-		isDeleting,
-		currentIndex,
-		profsArr,
-		typingSpeed,
-		deletingSpeed,
-		loop,
-		randomizeTyping,
-		pauseDuration,
-		clearInstantly,
-		playSound,
-	]);
+	}, [text, isDeleting, currentIndex, profsArr, typingSpeed, deletingSpeed, loop, randomizeTyping, pauseDuration, clearInstantly]);
 
 	return (
 		<span>
@@ -109,11 +89,7 @@ const Typewriter = ({
 			>
 				{text}
 			</span>
-			{cursor && (
-				<span style={{ opacity: showCursor ? 1 : 0 }}>
-					{cursorCharacter}
-				</span>
-			)}
+			{cursor && <span style={{ opacity: showCursor ? 1 : 0 }}>{cursorCharacter}</span>}
 		</span>
 	);
 };

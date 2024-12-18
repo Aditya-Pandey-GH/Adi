@@ -46,7 +46,7 @@
 
 	.paginationButton {
 		font-family: Langar, serif;
-		/* font-size: small; */
+		font-size: small;
 		color: #1e2127;
 		background: #ffffff;
 		border: none;
@@ -87,22 +87,19 @@ body {
 /* FONT MODIFICATIONS */
 @font-face {
 	font-family: "Iceberg";
-	src: url("/fonts/Iceberg.woff2") format("woff2"),
-		url("/fonts/Iceberg.woff") format("woff");
+	src: url("/fonts/Iceberg.woff2") format("woff2"), url("/fonts/Iceberg.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Khand";
-	src: url("/fonts/Khand.woff2") format("woff2"),
-		url("/fonts/Khand.woff") format("woff");
+	src: url("/fonts/Khand.woff2") format("woff2"), url("/fonts/Khand.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Langar";
-	src: url("/fonts/Langar.woff2") format("woff2"),
-		url("/fonts/Langar.woff") format("woff");
+	src: url("/fonts/Langar.woff2") format("woff2"), url("/fonts/Langar.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }

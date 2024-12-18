@@ -318,13 +318,8 @@ const Skills = () => {
 	const LangsPerPage = 3;
 	const lastLangIndex = curLangPage * LangsPerPage;
 	const firstLangIndex = lastLangIndex - LangsPerPage;
-	const currentLangs = Object.values(Langs).slice(
-		firstLangIndex,
-		lastLangIndex
-	);
-	const totalLangPages = Math.ceil(
-		Object.values(Langs).length / LangsPerPage
-	);
+	const currentLangs = Object.values(Langs).slice(firstLangIndex, lastLangIndex);
+	const totalLangPages = Math.ceil(Object.values(Langs).length / LangsPerPage);
 	const handleLangPageChange = (pageNumber) => {
 		setCurLangPage(pageNumber);
 	};
@@ -334,13 +329,8 @@ const Skills = () => {
 	const TechsPerPage = 4;
 	const lastTechIndex = curTechPage * TechsPerPage;
 	const firstTechIndex = lastTechIndex - TechsPerPage;
-	const currentTechs = Object.values(TechStacks).slice(
-		firstTechIndex,
-		lastTechIndex
-	);
-	const totalTechPages = Math.ceil(
-		Object.values(TechStacks).length / TechsPerPage
-	);
+	const currentTechs = Object.values(TechStacks).slice(firstTechIndex, lastTechIndex);
+	const totalTechPages = Math.ceil(Object.values(TechStacks).length / TechsPerPage);
 	const handleTechPageChange = (pageNumber) => {
 		setCurTechPage(pageNumber);
 	};
@@ -370,28 +360,15 @@ const Skills = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							LANGUAGES
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">LANGUAGES</h1>
 						<div className="text-center">
 							{currentLangs.map((lang) => (
-								<div
-									key={lang._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={lang.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+								<div key={lang._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={lang.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg justify-center sm:text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{lang.title}
-											</h2>
+											<h2 className="text-amber-400">{lang.title}</h2>
 											{/* <hr className="border border-amber-400" /> */}
 										</div>
 
@@ -404,29 +381,11 @@ const Skills = () => {
 							<div className="pagination">
 								{totalLangPages > 1 ? (
 									<>
-										<button
-											disabled={curLangPage <= 1}
-											onClick={() =>
-												handleLangPageChange(
-													curLangPage - 1
-												)
-											}
-											className="paginationButton active"
-										>
+										<button disabled={curLangPage <= 1} onClick={() => handleLangPageChange(curLangPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curLangPage}/${totalLangPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={
-												curLangPage >= totalLangPages
-											}
-											onClick={() =>
-												handleLangPageChange(
-													curLangPage + 1
-												)
-											}
-										>
+										<button className="paginationButton active" disabled={curLangPage >= totalLangPages} onClick={() => handleLangPageChange(curLangPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -437,28 +396,15 @@ const Skills = () => {
 						</div>
 					</div>
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							DATABASES
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">DATABASES</h1>
 						<div className="text-center">
 							{Object.values(DBs).map((db) => (
-								<div
-									key={db._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={db.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+								<div key={db._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={db.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{db.title}
-											</h2>
+											<h2 className="text-amber-400">{db.title}</h2>
 											<hr className="border border-amber-400" />
 										</div>
 
@@ -479,45 +425,22 @@ const Skills = () => {
 				</div>
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							FRAMEWORKS
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">FRAMEWORKS</h1>
 						<div className="text-center">
 							{currentTechs.map((tech) => (
-								<div
-									key={tech._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={tech.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+								<div key={tech._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={tech.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{tech.title}
-											</h2>
+											<h2 className="text-amber-400">{tech.title}</h2>
 											<hr className="border border-amber-400" />
 										</div>
 
 										<div className="mt-2">
 											<div>{tech.sect}</div>
-											{tech.tech ? (
-												<div>
-													Tech Stack: {tech.tech}
-												</div>
-											) : (
-												<></>
-											)}
-											{tech.lang ? (
-												<div>Language: {tech.lang}</div>
-											) : (
-												<></>
-											)}
+											{tech.tech ? <div>Tech Stack: {tech.tech}</div> : <></>}
+											{tech.lang ? <div>Language: {tech.lang}</div> : <></>}
 										</div>
 									</div>
 								</div>
@@ -525,29 +448,11 @@ const Skills = () => {
 							<div className="pagination">
 								{totalTechPages > 1 ? (
 									<>
-										<button
-											disabled={curTechPage <= 1}
-											onClick={() =>
-												handleTechPageChange(
-													curTechPage - 1
-												)
-											}
-											className="paginationButton active"
-										>
+										<button disabled={curTechPage <= 1} onClick={() => handleTechPageChange(curTechPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curTechPage}/${totalTechPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={
-												curTechPage >= totalTechPages
-											}
-											onClick={() =>
-												handleTechPageChange(
-													curTechPage + 1
-												)
-											}
-										>
+										<button className="paginationButton active" disabled={curTechPage >= totalTechPages} onClick={() => handleTechPageChange(curTechPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -558,36 +463,21 @@ const Skills = () => {
 						</div>
 					</div>
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							{`${currentToolsGroup.type.toLocaleUpperCase()} TOOLS`}
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">{`${currentToolsGroup.type.toLocaleUpperCase()} TOOLS`}</h1>
 						<div className="text-center">
 							{currentToolsGroup.tools.map((tools) => (
-								<div
-									key={tools._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={tools.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+								<div key={tools._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={tools.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
 									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{tools.title}
-											</h2>
+											<h2 className="text-amber-400">{tools.title}</h2>
 											<hr className="border border-amber-400" />
 										</div>
 
 										<div className="mt-2">
 											<div>{tools.sect}</div>
-											<div>
-												Using Since: {tools.since}
-											</div>
+											<div>Using Since: {tools.since}</div>
 											<div>Used For: {tools.type}</div>
 										</div>
 									</div>
@@ -596,29 +486,11 @@ const Skills = () => {
 							<div className="pagination">
 								{totalToolPages > 1 ? (
 									<>
-										<button
-											disabled={curToolPage <= 1}
-											onClick={() =>
-												handleToolPageChange(
-													curToolPage - 1
-												)
-											}
-											className="paginationButton active"
-										>
+										<button disabled={curToolPage <= 1} onClick={() => handleToolPageChange(curToolPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curToolPage}/${totalToolPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={
-												curToolPage >= totalToolPages
-											}
-											onClick={() =>
-												handleToolPageChange(
-													curToolPage + 1
-												)
-											}
-										>
+										<button className="paginationButton active" disabled={curToolPage >= totalToolPages} onClick={() => handleToolPageChange(curToolPage + 1)}>
 											{">"}
 										</button>
 									</>

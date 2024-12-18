@@ -2,36 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Intro from "../Intro";
-import ProgressBar from "../ProgressBar";
+import Link from "next/link";
 
 const Projects = () => {
-	const image = (type, name) => {
-		return null;
-	};
-	const Apps = [
-		{
-			_id: {
-				$oid: "66d0c7405dfe6b308267c93d",
-			},
-			id: "g12",
-			name: "G-12",
-			desc: "G-12 is a command line based Python project. This project contains a set games for different purposes, such as fun games and mind games.",
-			lang: ["Python", "MySQL"],
-			logo: "https://i.postimg.cc/Hx427zYy/g12.png",
-			link: "",
-		},
-		{
-			_id: {
-				$oid: "66d0c7405dfe6b308267c93e",
-			},
-			id: "g12_plus",
-			name: "G-12 Plus",
-			desc: "G-12 is a Graphical User Interface based Python project. Using libraries like tkinter and customtkinter, this project aims to improve the original G-12 project, by adding an interactable GUI.",
-			lang: ["Python", "SQLite"],
-			logo: "https://i.postimg.cc/BbSC5Fbw/g12Plus.png",
-			link: "",
-		},
-	]; // Applications
 	const Websites = [
 		// {
 		// 	_id: {
@@ -58,12 +31,7 @@ const Projects = () => {
 			name: "Adi's Portfolio",
 			desc: "Adi's Portfolio is the portfolio website for Aditya Pandey. This website shows the entire programming journey of Aditya Pandey. What you are seeing right now is also a part of this project. This portfolio will be updated from time to time to keep it up-to-date.",
 			// lang: ["Node.js", "Express.js", "MongoDB", "React", "Cascading Style Sheets (CSS)"],
-			lang: [
-				"Node.js",
-				"Express.js",
-				"React",
-				"Cascading Style Sheets (CSS)",
-			],
+			lang: ["Node.js", "Express.js", "React", "Cascading Style Sheets (CSS)"],
 			logo: "https://i.postimg.cc/3RGr13K4/portfolio.png",
 			link: "https://adi.vercel.app/",
 		},
@@ -73,7 +41,7 @@ const Projects = () => {
 			},
 			id: "evilSimon",
 			name: "Evil Simon",
-			desc: "Evil Simon is the Hard Mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
+			desc: "Evil Simon is the hard mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
 			lang: ["React.js", "Casacading Style Sheets (CSS)"],
 			logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
 			link: "https://evil-simon.vercel.app/",
@@ -96,6 +64,30 @@ const Projects = () => {
 		// 	link: "",
 		// },
 	]; // Websites
+	const Apps = [
+		{
+			_id: {
+				$oid: "66d0c7405dfe6b308267c93d",
+			},
+			id: "g12",
+			name: "G-12",
+			desc: "G-12 is a command line based Python project. This project contains a set games for different purposes, such as fun games and mind games.",
+			lang: ["Python", "MySQL"],
+			logo: "https://i.postimg.cc/Hx427zYy/g12.png",
+			link: "",
+		},
+		{
+			_id: {
+				$oid: "66d0c7405dfe6b308267c93e",
+			},
+			id: "g12_plus",
+			name: "G-12 Plus",
+			desc: "G-12 is a Graphical User Interface based Python project. Using libraries like tkinter and customtkinter, this project aims to improve the original G-12 project, by adding an interactable GUI.",
+			lang: ["Python", "SQLite"],
+			logo: "https://i.postimg.cc/BbSC5Fbw/g12Plus.png",
+			link: "",
+		},
+	]; // Applications
 	const Games = [
 		{
 			_id: {
@@ -143,364 +135,39 @@ const Projects = () => {
 		},
 	]; // Games
 
-	const Langs = [
-		{
-			_id: {
-				$oid: "66d0af185dfe6b318267c917",
-			},
-			id: "js",
-			title: "JavaScript (MERN)",
-			skill: 80,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c919",
-			},
-			id: "csharp",
-			title: "C# (Unity)",
-			skill: 75,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b318267c918",
-			},
-			id: "html",
-			title: "HTML",
-			skill: 75,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b318267c919",
-			},
-			id: "css",
-			title: "CSS",
-			skill: 75,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c918",
-			},
-			id: "java",
-			title: "Java (Core)",
-			skill: 60,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91a",
-			},
-			id: "python",
-			title: "Python (Basics)",
-			skill: 50,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91c",
-			},
-			id: "cpp",
-			title: "C++ (Basics)",
-			skill: 25,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91b",
-			},
-			id: "c",
-			title: "C (Basics)",
-			skill: 10,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-		},
-		// {
-		// 	_id: {
-		// 		$oid: "66d0af185dfe6b308267c91d",
-		// 	},
-		// 	id: "dart",
-		// 	title: "Dart (Flutter) {Learning}",
-		// 	skill: 25,
-		// 	logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
-		// },
-	]; // Languages
-	const DBs = [
-		{
-			_id: {
-				$oid: "66d0b3605dfe6b308267c91f",
-			},
-			id: "mongo",
-			title: "MongoDB",
-			type: "NoSQL",
-			since: "2023",
-			skill: 80,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0b3605dfe6b308267c920",
-			},
-			id: "mysql",
-			title: "MySQL",
-			type: "SQL",
-			since: "2019",
-			skill: 40,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-		},
-		// {
-		// 	_id: {
-		// 		$oid: "66d0b3605dfe6b308267c921",
-		// 	},
-		// 	id: "oraclesql",
-		// 	title: "OracleSQL",
-		// 	skill: 20,
-		// 	logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
-		// },
-	]; // Databases
-	const TechStacks = [
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c90f",
-			},
-			id: "react",
-			title: "ReactJS",
-			tech: "MERN",
-			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c911",
-			},
-			id: "node",
-			title: "NodeJS",
-			tech: "MERN",
-			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c910",
-			},
-			id: "express",
-			title: "ExpressJS",
-			tech: "MERN",
-			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c914",
-			},
-			id: "vite",
-			title: "Vite",
-			tech: "MERN",
-			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c915",
-			},
-			id: "nextjs",
-			title: "NextJS {Learning}",
-			tech: "MERN Stack",
-			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c916",
-			},
-			id: "tailwind",
-			title: "Tailwind",
-			sect: "Web Development",
-			lang: "CSS",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0acd85dfe6b308267c912",
-			},
-			id: "unity",
-			title: "Unity {Learning}",
-			tech: "",
-			sect: "Game Development",
-			lang: "C#",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
-		},
-		// {
-		// 	_id: {
-		// 		$oid: "66d0acd85dfe6b308267c913",
-		// 	},
-		// 	id: "flutter",
-		// 	title: "Flutter {Learning}",
-		// 	tech: "Flutter",
-		// 	sect: "Application Development",
-		// 	lang: "Dart",
-		// 	logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
-		// },
-	]; // Frameworks
-	const Tools = [
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91c",
-			},
-			id: "vscode",
-			title: "Microsoft Visual Studio Code",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-			type: "Programming",
-			since: "2022",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91b",
-			},
-			id: "vs",
-			title: "Microsoft Visual Studio",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-original.svg",
-			type: "Programming",
-			since: "2016",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91d",
-			},
-			id: "jetbrains",
-			title: "JetBrains",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetbrains/jetbrains-original.svg",
-			type: "Programming",
-			since: "2022",
-		},
-		// {
-		// 	_id: {
-		// 		$oid: "66d0af185dfe6b308267c91e",
-		// 	},
-		// 	id: "vb",
-		// 	title: "Microsoft Visual Basic",
-		// 	logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualbasic/visualbasic-original.svg",
-		// 	type: "Programming",
-		// 	since: "2016",
-		// },
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c916",
-			},
-			id: "ppt",
-			title: "Microsoft PowerPoint",
-			logo: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg",
-			type: "Designing",
-			since: "2013",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c917",
-			},
-			id: "figma",
-			title: "Figma",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-			type: "Designing",
-			since: "2023",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c918",
-			},
-			id: "canva",
-			title: "Canva",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
-			type: "Designing",
-			since: "2022",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c920",
-			},
-			id: "photoshop",
-			title: "Adobe Photoshop",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg",
-			type: "Designing",
-			since: "2024",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b308267c91a",
-			},
-			id: "filmora",
-			title: "Wondershare Filmora",
-			logo: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Wondershare_filmora_logo.svg",
-			type: "Video Editing",
-			since: "2020",
-		},
-		// {
-		// 	_id: {
-		// 		$oid: "66d0af185dfe6b308267c91b",
-		// 	},
-		// 	id: "premiere_pro",
-		// 	title: "Adobe Premiere Pro",
-		// 	logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg",
-		// 	type: "Video Editing",
-		// 	since: "2024",
-		// },
-	]; // Programming + Designing + Video Editing Tools
-
-	// PAGINATION LANG STARTS
-	const [curLangPage, setCurLangPage] = useState(1);
-	const LangsPerPage = 3;
-	const lastLangIndex = curLangPage * LangsPerPage;
-	const firstLangIndex = lastLangIndex - LangsPerPage;
-	const currentLangs = Object.values(Langs).slice(
-		firstLangIndex,
-		lastLangIndex
-	);
-	const totalLangPages = Math.ceil(
-		Object.values(Langs).length / LangsPerPage
-	);
-	const handleLangPageChange = (pageNumber) => {
-		setCurLangPage(pageNumber);
+	// PAGINATION WEBSITES STARTS
+	const [curWebPage, setCurWebPage] = useState(1);
+	const WebsPerPage = 3;
+	const lastWebIndex = curWebPage * WebsPerPage;
+	const firstWebIndex = lastWebIndex - WebsPerPage;
+	const currentWebs = Object.values(Websites).slice(firstWebIndex, lastWebIndex);
+	const totalWebPages = Math.ceil(Object.values(Websites).length / WebsPerPage);
+	const handleWebPageChange = (pageNumber) => {
+		setCurWebPage(pageNumber);
 	};
-	// PAGINATION LANG ENDS
-	// PAGINATION FRAMEWORKS STARTS
-	const [curTechPage, setCurTechPage] = useState(1);
-	const TechsPerPage = 4;
-	const lastTechIndex = curTechPage * TechsPerPage;
-	const firstTechIndex = lastTechIndex - TechsPerPage;
-	const currentTechs = Object.values(TechStacks).slice(
-		firstTechIndex,
-		lastTechIndex
-	);
-	const totalTechPages = Math.ceil(
-		Object.values(TechStacks).length / TechsPerPage
-	);
-	const handleTechPageChange = (pageNumber) => {
-		setCurTechPage(pageNumber);
+	// PAGINATION WEBSITES ENDS
+	// PAGINATION APPS STARTS
+	const [curAppPage, setCurAppPage] = useState(1);
+	const AppsPerPage = 2;
+	const lastAppIndex = curAppPage * AppsPerPage;
+	const firstAppIndex = lastAppIndex - AppsPerPage;
+	const currentApps = Object.values(Apps).slice(firstAppIndex, lastAppIndex);
+	const totalAppPages = Math.ceil(Object.values(Apps).length / AppsPerPage);
+	const handleAppPageChange = (pageNumber) => {
+		setCurAppPage(pageNumber);
 	};
-	// PAGINATION FRAMEWORKS ENDS
-	// // PAGINATION TOOL STARTS
-	const [curToolPage, setCurToolPage] = useState(1);
-	const groupedTools = Object.values(Tools).reduce((acc, tool) => {
-		if (!acc[tool.type]) {
-			acc[tool.type] = [];
-		}
-		acc[tool.type].push(tool);
-		return acc;
-	}, {});
-	const toolGroups = Object.keys(groupedTools).map((elem) => {
-		return { type: elem, tools: groupedTools[elem] };
-	});
-	const totalToolPages = toolGroups.length;
-	const currentToolsGroup = toolGroups[curToolPage - 1];
-	const handleToolPageChange = (pageNumber) => {
-		setCurToolPage(pageNumber);
+	// PAGINATION APPS ENDS
+	// PAGINATION GAMES STARTS
+	const [curGamePage, setCurGamePage] = useState(1);
+	const GamesPerPage = 3;
+	const lastGameIndex = curGamePage * GamesPerPage;
+	const firstGameIndex = lastGameIndex - GamesPerPage;
+	const currentGames = Object.values(Games.reverse()).slice(firstGameIndex, lastGameIndex);
+	const totalGamePages = Math.ceil(Object.values(Games).length / GamesPerPage);
+	const handleGamePageChange = (pageNumber) => {
+		setCurGamePage(pageNumber);
 	};
-	// // PAGINATION TOOL ENDS
+	// PAGINATION GAMES ENDS
 
 	return (
 		<>
@@ -508,63 +175,50 @@ const Projects = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							LANGUAGES
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">WEBSITES</h1>
 						<div className="text-center">
-							{currentLangs.map((lang) => (
-								<div
-									key={lang._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={lang.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+							{currentWebs.map((web) => (
+								<div key={web._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={web.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg justify-center sm:text-justify sm:ml-4">
+									<div className="w-full iceberg text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{lang.title}
-											</h2>
-											{/* <hr className="border border-amber-400" /> */}
+											<h2 className="text-amber-400">{web.name}</h2>
+											<hr className="border border-amber-400" />
 										</div>
 
-										<div className="w-full h-6 bg-gray-800 rounded-lg relative overflow-hidden">
-											<ProgressBar skill={lang.skill} />
+										<div className="mt-2">
+											<div>{web.desc}</div>
+											<div>
+												Language:
+												<ul>
+													{web.lang.map((lang) => (
+														<li key={lang} className="list-disc ml-6">
+															{lang}
+														</li>
+													))}
+												</ul>
+											</div>
+											{web.link && (
+												<div className="flex flex-row items-center mt-2">
+													<Image src="/svgs/Site.svg" width={25} height={25} alt="Link: " className="w-6 mr-2" />
+													<Link href={web.link} className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
+														{web.link}
+													</Link>
+												</div>
+											)}
 										</div>
 									</div>
 								</div>
 							))}
 							<div className="pagination">
-								{totalLangPages > 1 ? (
+								{totalWebPages > 1 ? (
 									<>
-										<button
-											disabled={curLangPage <= 1}
-											onClick={() =>
-												handleLangPageChange(
-													curLangPage - 1
-												)
-											}
-											className="paginationButton active"
-										>
+										<button disabled={curWebPage <= 1} onClick={() => handleWebPageChange(curWebPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
-										<button className="paginationButton">{`Page ${curLangPage}/${totalLangPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={
-												curLangPage >= totalLangPages
-											}
-											onClick={() =>
-												handleLangPageChange(
-													curLangPage + 1
-												)
-											}
-										>
+										<button className="paginationButton">{`Page ${curWebPage}/${totalWebPages}`}</button>
+										<button className="paginationButton active" disabled={curWebPage >= totalWebPages} onClick={() => handleWebPageChange(curWebPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -572,120 +226,55 @@ const Projects = () => {
 									<></>
 								)}
 							</div>
-						</div>
-					</div>
-					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							DATABASES
-						</h1>
-						<div className="text-center">
-							{Object.values(DBs).map((db) => (
-								<div
-									key={db._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={db.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
-
-									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
-										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{db.title}
-											</h2>
-											<hr className="border border-amber-400" />
-										</div>
-
-										{/* <div className="w-full h-6 bg-gray-800 rounded-lg relative overflow-hidden">
-											<ProgressBar skill={db.skill} />
-										</div> */}
-
-										<div className="mt-2">
-											<div>{db.sect}</div>
-											<div>Type: {db.type}</div>
-											<div>Using Since: {db.since}</div>
-										</div>
-									</div>
-								</div>
-							))}
 						</div>
 					</div>
 				</div>
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							FRAMEWORKS
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">APPLICATIONS</h1>
 						<div className="text-center">
-							{currentTechs.map((tech) => (
-								<div
-									key={tech._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={tech.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+							{currentApps.map((app) => (
+								<div key={app._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={app.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
+									<div className="w-full iceberg text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{tech.title}
-											</h2>
+											<h2 className="text-amber-400">{app.name}</h2>
 											<hr className="border border-amber-400" />
 										</div>
 
 										<div className="mt-2">
-											<div>{tech.sect}</div>
-											{tech.tech ? (
-												<div>
-													Tech Stack: {tech.tech}
+											<div>{app.desc}</div>
+											<div>
+												Language:
+												<ul>
+													{app.lang.map((lang) => (
+														<li key={lang} className="list-disc ml-6">
+															{lang}
+														</li>
+													))}
+												</ul>
+											</div>
+											{app.link && (
+												<div className="flex flex-row items-center mt-2">
+													<Image src="/svgs/Site.svg" width={25} height={25} alt="Link: " className="w-6 mr-2" />
+													<Link href={app.link} className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
+														{app.link}
+													</Link>
 												</div>
-											) : (
-												<></>
-											)}
-											{tech.lang ? (
-												<div>Language: {tech.lang}</div>
-											) : (
-												<></>
 											)}
 										</div>
 									</div>
 								</div>
 							))}
 							<div className="pagination">
-								{totalTechPages > 1 ? (
+								{totalAppPages > 1 ? (
 									<>
-										<button
-											disabled={curTechPage <= 1}
-											onClick={() =>
-												handleTechPageChange(
-													curTechPage - 1
-												)
-											}
-											className="paginationButton active"
-										>
+										<button disabled={curAppPage <= 1} onClick={() => handleAppPageChange(curAppPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
-										<button className="paginationButton">{`Page ${curTechPage}/${totalTechPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={
-												curTechPage >= totalTechPages
-											}
-											onClick={() =>
-												handleTechPageChange(
-													curTechPage + 1
-												)
-											}
-										>
+										<button className="paginationButton">{`Page ${curAppPage}/${totalAppPages}`}</button>
+										<button className="paginationButton active" disabled={curAppPage >= totalAppPages} onClick={() => handleAppPageChange(curAppPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -696,67 +285,50 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">
-							{`${currentToolsGroup.type.toLocaleUpperCase()} TOOLS`}
-						</h1>
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">GAMES</h1>
 						<div className="text-center">
-							{currentToolsGroup.tools.map((tools) => (
-								<div
-									key={tools._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image
-										src={tools.logo}
-										width={75}
-										height={75}
-										alt=""
-										className="bg-white p-2 rounded-2xl"
-									/>
+							{currentGames.map((game) => (
+								<div key={game._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={game.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
+									<div className="w-full iceberg text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
-											<h2 className="text-amber-400">
-												{tools.title}
-											</h2>
+											<h2 className="text-amber-400">{game.name}</h2>
 											<hr className="border border-amber-400" />
 										</div>
 
 										<div className="mt-2">
-											<div>{tools.sect}</div>
+											<div>{game.desc}</div>
 											<div>
-												Using Since: {tools.since}
+												Language:
+												<ul>
+													{game.lang.map((lang) => (
+														<li key={lang} className="list-disc ml-6">
+															{lang}
+														</li>
+													))}
+												</ul>
 											</div>
-											<div>Used For: {tools.type}</div>
+											{game.link && (
+												<div className="flex flex-row items-center mt-2">
+													<Image src="/svgs/Site.svg" width={25} height={25} alt="Link: " className="w-6 mr-2" />
+													<Link href={game.link} className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
+														{game.link}
+													</Link>
+												</div>
+											)}
 										</div>
 									</div>
 								</div>
 							))}
 							<div className="pagination">
-								{totalToolPages > 1 ? (
+								{totalGamePages > 1 ? (
 									<>
-										<button
-											disabled={curToolPage <= 1}
-											onClick={() =>
-												handleToolPageChange(
-													curToolPage - 1
-												)
-											}
-											className="paginationButton active"
-										>
+										<button disabled={curGamePage <= 1} onClick={() => handleGamePageChange(curGamePage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
-										<button className="paginationButton">{`Page ${curToolPage}/${totalToolPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={
-												curToolPage >= totalToolPages
-											}
-											onClick={() =>
-												handleToolPageChange(
-													curToolPage + 1
-												)
-											}
-										>
+										<button className="paginationButton">{`Page ${curGamePage}/${totalGamePages}`}</button>
+										<button className="paginationButton active" disabled={curGamePage >= totalGamePages} onClick={() => handleGamePageChange(curGamePage + 1)}>
 											{">"}
 										</button>
 									</>

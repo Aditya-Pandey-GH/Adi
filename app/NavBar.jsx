@@ -74,13 +74,7 @@ const NavBar = () => {
 					{curPage !== undefined && (
 						<>
 							<div className="w-fit m-auto flex justify-center items-center my-2 py-4 px-6 space-x-2 text-base bg-gray-800 rounded-lg">
-								<Image
-									src={curPage.logo}
-									width={200}
-									height={200}
-									alt=""
-									className="w-10"
-								/>
+								<Image src={curPage.logo} width={200} height={200} alt="" className="w-10" />
 								<div>{curPage.name}</div>
 							</div>
 						</>
@@ -93,17 +87,9 @@ const NavBar = () => {
 									key={page.id}
 									href={page.path}
 									onClick={() => handleNavigation(page.path)}
-									className={`${
-										pathname === page.path && "bg-gray-800"
-									} flex items-center p-4 text-base font-normal hover:bg-gray-600 hover:cursor-pointer`}
+									className={`${pathname === page.path && "bg-gray-800"} flex items-center p-4 text-base font-normal hover:bg-gray-600 hover:cursor-pointer`}
 								>
-									<Image
-										src={page.logo}
-										width={400}
-										height={400}
-										className="w-6 h-6 mr-3"
-										alt=""
-									/>
+									<Image src={page.logo} width={400} height={400} className="w-6 h-6 mr-3" alt="" />
 									{page.name}
 								</div>
 							);
@@ -114,27 +100,10 @@ const NavBar = () => {
 				<div className="overflow-y-auto max-h-screen flex justify-evenly w-screen md:hidden">
 					{Pages.map((page) => {
 						return (
-							<div
-								key={page.id}
-								href={page.path}
-								onClick={() => handleNavigation(page.path)}
-							>
-								<div
-									className={`${
-										pathname === page.path && "bg-slate-600"
-									} flex flex-col items-center px-1 py-2 rounded-lg hover:cursor-pointer`}
-								>
-									<Image
-										src={page.logo}
-										width={400}
-										height={400}
-										title={page.name}
-										alt=""
-										className="w-6 h-6"
-									/>
-									<div className="iceberg hidden sm:block">
-										{page.name}
-									</div>
+							<div key={page.id} href={page.path} onClick={() => handleNavigation(page.path)}>
+								<div className={`${pathname === page.path && "bg-slate-600"} flex flex-col items-center px-1 py-2 rounded-lg hover:cursor-pointer`}>
+									<Image src={page.logo} width={400} height={400} title={page.name} alt="" className="w-6 h-6" />
+									<div className="iceberg hidden sm:block">{page.name}</div>
 								</div>
 							</div>
 						);
