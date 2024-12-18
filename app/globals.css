@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@layer utilities {
+	/* CONTAINERS */
+	.col-1 {
+		width: 42.5%;
+		margin-bottom: 0rem;
+	}
+
+	.col-2 {
+		width: 55%;
+	}
+
+	.mainContainer {
+		background-color: rgba(0, 0, 0, 0.25);
+		border-radius: 1rem;
+		text-align: center;
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.subContainer {
+		width: 100%;
+		height: fit-content;
+		background-color: #313a4b;
+		border-radius: 1rem;
+		margin: auto;
+		margin-top: 1rem;
+		padding: 1rem;
+		text-align: justify;
+	}
+
+	@media screen and (max-width: 1024px) {
+		.col-1,
+		.col-2 {
+			width: 100%;
+		}
+	}
+
+	/* PAGINATION */
+	.pagination {
+		display: flex;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	.paginationButton {
+		font-family: Langar, serif;
+		/* font-size: small; */
+		color: #1e2127;
+		background: #ffffff;
+		border: none;
+		border-radius: 0.2rem;
+		padding: 10px 15px;
+		margin: 0 5px;
+	}
+
+	.paginationButton.active {
+		background-color: #ffc700;
+		cursor: pointer;
+	}
+
+	.paginationButton.active:hover {
+		opacity: 75%;
+	}
+}
+@tailwind utilities;
+
+:root {
+	--background: #0a0a0a;
+	--foreground: #ededed;
+}
+
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--background: #ffffff;
+		--foreground: #171717;
+	}
+} */
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FONT MODIFICATIONS */
+@font-face {
+	font-family: "Iceberg";
+	src: url("/fonts/Iceberg.woff2") format("woff2"),
+		url("/fonts/Iceberg.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Khand";
+	src: url("/fonts/Khand.woff2") format("woff2"),
+		url("/fonts/Khand.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Langar";
+	src: url("/fonts/Langar.woff2") format("woff2"),
+		url("/fonts/Langar.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+.iceberg {
+	font-family: "Iceberg", sans-serif;
+}
+
+.khand {
+	font-family: "Khand", sans-serif;
+}
+
+.langar {
+	font-family: "Langar", sans-serif;
+}
+
+/* SCROLLBAR MODIFICATIONS */
+::-webkit-scrollbar {
+	/* display: none; */
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #212936;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #3f485a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
