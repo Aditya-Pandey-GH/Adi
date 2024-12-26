@@ -8,11 +8,20 @@ const Skills = () => {
 	const Langs = [
 		{
 			_id: {
+				$oid: "66d0af185dfe6b318267c918",
+			},
+			id: "html",
+			title: "HTML",
+			skill: 95,
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+		},
+		{
+			_id: {
 				$oid: "66d0af185dfe6b318267c917",
 			},
 			id: "js",
 			title: "JavaScript (MERN)",
-			skill: 80,
+			skill: 90,
 			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 		},
 		{
@@ -23,15 +32,6 @@ const Skills = () => {
 			title: "C# (Unity)",
 			skill: 75,
 			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-		},
-		{
-			_id: {
-				$oid: "66d0af185dfe6b318267c918",
-			},
-			id: "html",
-			title: "HTML",
-			skill: 75,
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
 		},
 		{
 			_id: {
@@ -124,36 +124,35 @@ const Skills = () => {
 	const TechStacks = [
 		{
 			_id: {
-				$oid: "66d0acd85dfe6b308267c90f",
+				$oid: "66d0acd85dfe6b308267c912",
 			},
-			id: "react",
-			title: "ReactJS",
-			tech: "MERN",
-			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+			id: "unity",
+			title: "Unity",
+			tech: "",
+			sect: "Game Development",
+			lang: "C#",
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
 		},
 		{
 			_id: {
-				$oid: "66d0acd85dfe6b308267c911",
+				$oid: "66d0acd85dfe6b308267c916",
 			},
-			id: "node",
-			title: "NodeJS",
-			tech: "MERN",
+			id: "tailwind",
+			title: "Tailwind CSS",
 			sect: "Web Development",
-			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+			lang: "CSS",
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
 		},
 		{
 			_id: {
-				$oid: "66d0acd85dfe6b308267c910",
+				$oid: "66d0acd85dfe6b308267c915",
 			},
-			id: "express",
-			title: "ExpressJS",
-			tech: "MERN",
+			id: "nextjs",
+			title: "NextJS",
+			tech: "MERN Stack",
 			sect: "Web Development",
 			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
 		},
 		{
 			_id: {
@@ -168,35 +167,36 @@ const Skills = () => {
 		},
 		{
 			_id: {
-				$oid: "66d0acd85dfe6b308267c915",
+				$oid: "66d0acd85dfe6b308267c90f",
 			},
-			id: "nextjs",
-			title: "NextJS {Learning}",
-			tech: "MERN Stack",
+			id: "react",
+			title: "ReactJS",
+			tech: "MERN",
 			sect: "Web Development",
 			lang: "JavaScript",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
 		},
 		{
 			_id: {
-				$oid: "66d0acd85dfe6b308267c916",
+				$oid: "66d0acd85dfe6b308267c910",
 			},
-			id: "tailwind",
-			title: "Tailwind",
+			id: "express",
+			title: "ExpressJS",
+			tech: "MERN",
 			sect: "Web Development",
-			lang: "CSS",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+			lang: "JavaScript",
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
 		},
 		{
 			_id: {
-				$oid: "66d0acd85dfe6b308267c912",
+				$oid: "66d0acd85dfe6b308267c911",
 			},
-			id: "unity",
-			title: "Unity {Learning}",
-			tech: "",
-			sect: "Game Development",
-			lang: "C#",
-			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
+			id: "node",
+			title: "NodeJS",
+			tech: "MERN",
+			sect: "Web Development",
+			lang: "JavaScript",
+			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
 		},
 		// {
 		// 	_id: {

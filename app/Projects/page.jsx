@@ -33,7 +33,7 @@ const Projects = () => {
 			// lang: ["Node.js", "Express.js", "MongoDB", "React", "Cascading Style Sheets (CSS)"],
 			lang: ["Node.js", "Express.js", "React", "Next.js", "Cascading Style Sheets (CSS)", "Tailwind CSS"],
 			logo: "https://i.postimg.cc/3RGr13K4/portfolio.png",
-			link: "https://adi.vercel.app/",
+			link: "https://adipandey.vercel.app",
 		},
 		{
 			_id: {
@@ -44,7 +44,7 @@ const Projects = () => {
 			desc: "Evil Simon is the hard mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
 			lang: ["React.js", "Casacading Style Sheets (CSS)"],
 			logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
-			link: "https://evil-simon.vercel.app/",
+			link: "https://evil-simon.vercel.app",
 		},
 		// {
 		// 	_id: {
@@ -120,7 +120,7 @@ const Projects = () => {
 			desc: "Evil Simon is the Hard Mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
 			lang: ["React.js", "Casacading Style Sheets (CSS)"],
 			logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
-			link: "https://evil-simon.vercel.app/",
+			link: "https://evil-simon.vercel.app",
 		},
 		{
 			_id: {
@@ -131,7 +131,7 @@ const Projects = () => {
 			desc: "Flappy Bird is one of the very well popular games. But it was abandoned by its developer. This project is a clone of the original Flappy Bird game, but a bit more difficult.",
 			lang: ["Unity", "C#"],
 			logo: "https://i.postimg.cc/3xBgttpc/flappy-Bird.png",
-			link: "https://github.com/AdiBhaiya/Flappy-Bird-Clone/releases/",
+			link: "https://github.com/AdiBhaiya/Flappy-Bird-Clone/releases",
 		},
 	]; // Games
 

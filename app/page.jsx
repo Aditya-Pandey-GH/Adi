@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import Intro from "./Intro";
 
 const Main = () => {
@@ -8,30 +7,30 @@ const Main = () => {
 		"I am a BCA graduate, and have the knowledge of making web applications 🌐, like this website.",
 		"Other than that, I also have knowledge of various concepts like graphic designing 🖼️ and video editing 📹.",
 		"I aspire to become a professional game developer 🎮 in near future, and lead the market and industry with my professionalism.",
-		"This website shows my skills, my works, my achievements 🏆, my experience, and many more things about me.",
+		"The purpose of this website is to showcase my skills, works, achievements 🏆, experience, etc.",
 		"Explore this website to know more about me 😁.",
 	];
 
 	const Education = [
 		{
 			id: "bca",
-			title: "Bachelor of Computer Applications",
+			title: "BCA",
 			duration: "Dec 2021 - June 2024",
 			institute: "JIMS, Sector-5, Rohini",
 			location: "New Delhi",
 			affiliation: "GGSIPU",
 		},
 		{
-			id: "intermediate",
-			title: "Intermediate",
+			id: "xii",
+			title: "XII",
 			duration: "2020 - 2021",
 			institute: "Hansraj Smarak Sr. Sec. School",
 			location: "New Delhi",
 			affiliation: "CBSE",
 		},
 		{
-			id: "matriculation",
-			title: "Matriculation",
+			id: "x",
+			title: "X",
 			duration: "2018 - 2019",
 			institute: "Everest Public School",
 			location: "Ghaziabad",
