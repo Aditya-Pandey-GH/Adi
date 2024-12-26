@@ -4,7 +4,6 @@ import Intro from "../Intro";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "../Modal";
-import axios from "axios";
 
 const Connect = () => {
 	const [openModalId, setOpenModalId] = useState(null);
