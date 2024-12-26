@@ -208,6 +208,7 @@ const Projects = () => {
 													<Link
 														href={web.link}
 														title={web.link}
+														target="_blank"
 														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
 													>
 														Go to site
@@ -280,6 +281,7 @@ const Projects = () => {
 													<Link
 														href={app.link}
 														title={app.link}
+														target="_blank"
 														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
 													>
 														Go to Release
@@ -350,6 +352,7 @@ const Projects = () => {
 													<Link
 														href={game.link}
 														title={game.link}
+														target="_blank"
 														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
 													>
 														Go to Release
