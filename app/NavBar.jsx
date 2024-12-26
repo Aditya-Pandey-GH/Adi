@@ -87,7 +87,9 @@ const NavBar = () => {
 									key={page.id}
 									href={page.path}
 									onClick={() => handleNavigation(page.path)}
-									className={`${pathname === page.path && "bg-gray-800"} flex items-center p-4 text-base font-normal hover:bg-gray-600 hover:cursor-pointer`}
+									className={`${
+										pathname === page.path && "bg-gray-800"
+									} flex items-center p-4 text-base font-normal hover:bg-gray-600 hover:cursor-pointer`}
 								>
 									<Image src={page.logo} width={400} height={400} className="w-6 h-6 mr-3" alt="" />
 									{page.name}
@@ -101,7 +103,11 @@ const NavBar = () => {
 					{Pages.map((page) => {
 						return (
 							<div key={page.id} href={page.path} onClick={() => handleNavigation(page.path)}>
-								<div className={`${pathname === page.path && "bg-slate-600"} flex flex-col items-center px-1 py-2 rounded-lg hover:cursor-pointer`}>
+								<div
+									className={`${
+										pathname === page.path && "bg-slate-600"
+									} flex flex-col items-center px-1 py-2 rounded-lg hover:cursor-pointer`}
+								>
 									<Image src={page.logo} width={400} height={400} title={page.name} alt="" className="w-6 h-6" />
 									<div className="iceberg hidden sm:block">{page.name}</div>
 								</div>

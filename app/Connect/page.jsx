@@ -4,6 +4,7 @@ import Intro from "../Intro";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "../Modal";
+import axios from "axios";
 
 const Connect = () => {
 	const [openModalId, setOpenModalId] = useState(null);
@@ -18,7 +19,7 @@ const Connect = () => {
 			qr: "/svgs/GitHub.svg",
 			link: "https://github.com/AdiPGHub",
 			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-			msg: "Check out the projects made by\nAditya Pandey on his GitHub profile.",
+			msg: "Check out the projects made by me on my GitHub profile.",
 		},
 		{
 			_id: {
@@ -30,7 +31,7 @@ const Connect = () => {
 			qr: "/svgs/LinkedIn.svg",
 			link: "https://www.linkedin.com/in/AdiPIn",
 			logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
-			msg: "Check out the achievements of\nAditya Pandey on his LinkedIn account.",
+			msg: "Check out my achievements on my LinkedIn account.",
 		},
 		{
 			_id: {
@@ -41,14 +42,27 @@ const Connect = () => {
 			userName: "GameZonedYT",
 			qr: "/svgs/YT.svg",
 			link: "https://www.youtube.com/@GameZonedYT?sub_confirmation=1",
-			logo: "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
-			msg: "Check out the videos edited by\nand thumbnails designed by\nAditya Pandey on his YouTube channel.",
+			logo: "https://cdn.jsdelivr.net/gh/rdimascio/icons/icons/youtube.svg",
+			msg: "Check out my videos and thumbnails on my YouTube channel.",
+		},
+		{
+			_id: {
+				$oid: "66d0ccb96dfe6b308267c947",
+			},
+			id: "insta",
+			name: "Instagram",
+			userName: "AdiP.Ig",
+			qr: "/svgs/Insta.svg",
+			link: "https://www.instagram.com/adip.ig",
+			// logo: "https://cdn.jsdelivr.net/gh/rdimascio/icons/icons/instagram.svg",
+			logo: "https://static.cdnlogo.com/logos/i/92/instagram.svg",
+			msg: "Check out my posts and activities on my Instagram account.",
 		},
 	];
 
 	const [formData, setFormData] = useState({
 		email: "",
-		subject: "",
+		client: "",
 		message: "",
 	});
 
@@ -62,25 +76,26 @@ const Connect = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if (!formData.email || !formData.client || !formData.message) return alert("Please fill all the fields");
 		if (
-			confirm(
-				"Confirm the information to continue:\n" +
-					"\nEmail ID: " +
-					formData.email +
-					"\nName: " +
-					formData.subject +
-					"\nMessage:\n" +
-					formData.message
-			)
-		)
-			axios
-				.post(`${import.meta.env.VITE_SERVER_URL}/api/send-email`, formData)
-				.then((res) => {
-					alert("Email sent successfully");
-				})
-				.catch((error) => {
-					console.error("There was an error sending the email!", error);
-				});
+			// confirm(
+			// 	"Confirm the information to continue:\n" +
+			// 		"\nEmail ID: " +
+			// 		formData.email +
+			// 		"\nName: " +
+			// 		formData.client +
+			// 		"\nMessage:\n" +
+			// 		formData.message
+			// )
+			confirm("Press OK to confirm")
+		) {
+			const res = await (await fetch(`/api/sendMail`, { method: "POST", body: JSON.stringify(formData) })).json();
+			if (res.success) {
+				alert("Email sent successfully");
+			} else {
+				alert("Email sending failed. Please try again.");
+			}
+		}
 	};
 
 	return (
@@ -88,6 +103,68 @@ const Connect = () => {
 			<div className="flex flex-col lg:flex-row justify-around mb-10 sm:mb-16 md:mb-0 md:ml-60 px-4 pt-4">
 				<div className="col-1">
 					<Intro />
+					<div className="mainContainer">
+						<h1 className="langar text-amber-400 text-lg lg:text-xl">CONTACT ME</h1>
+						<div className="iceberg h-fit flex flex-col text-justify mt-4">
+							<form onSubmit={handleSubmit} className="text-white flex flex-col space-y-4">
+								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
+									<div className="ml-2">
+										<Image src={"/svgs/Name.svg"} width={30} height={30} alt="" />
+									</div>
+									<input
+										id="client"
+										name="client"
+										type="text"
+										placeholder="Name"
+										autoComplete="off"
+										value={formData.client}
+										onChange={handleChange}
+										className="bg-transparent w-full mx-2 px-2 focus:outline-none"
+									/>
+								</div>
+								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
+									<div className="ml-2">
+										<Image src={"/svgs/Email.svg"} width={30} height={30} alt="" />
+									</div>
+									<input
+										id="email"
+										name="email"
+										type="email"
+										placeholder="Email ID"
+										autoComplete="off"
+										value={formData.email}
+										onChange={handleChange}
+										className="bg-transparent w-full mx-2 px-2 focus:outline-none"
+									/>
+								</div>
+								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
+									<div className="ml-2">
+										<Image src={"/svgs/Message.svg"} width={30} height={30} alt="" />
+									</div>
+									<textarea
+										id="message"
+										name="message"
+										type="text"
+										placeholder="Message"
+										autoComplete="off"
+										value={formData.message}
+										onChange={handleChange}
+										className="bg-transparent w-full min-h-40 mx-2 px-2 focus:outline-none resize-y"
+									/>
+								</div>
+
+								<button
+									id="sendMailToAdi"
+									className="langar text-lg cursor-pointer bg-amber-400 text-black w-fit m-auto px-10 py-4 rounded-lg hover:opacity-80"
+								>
+									SUBMIT
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div className="col-2">
 					<div className="mainContainer">
 						<h1 className="langar text-amber-400 text-lg lg:text-xl">CONNECT WITH ME</h1>
 						{/* <div className="text-center mt-2 flex flex-wrap space-x-4 justify-center"> */}
@@ -168,74 +245,6 @@ const Connect = () => {
 									// </div>
 								);
 							})}
-						</div>
-					</div>
-				</div>
-
-				<div className="col-2">
-					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">CONTACT ME</h1>
-						<div className="iceberg h-fit flex flex-col text-justify mt-4">
-							<form
-								onSubmit={(e) => {
-									e.preventDefault();
-									// handleSubmit();
-								}}
-								className="text-white flex flex-col space-y-4"
-							>
-								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
-									<div className="ml-2">
-										<Image src={"/svgs/Name.svg"} width={30} height={30} alt="" />
-									</div>
-									<input
-										id="subject"
-										name="subject"
-										type="text"
-										placeholder="Name"
-										autoComplete="off"
-										value={formData.subject}
-										onChange={handleChange}
-										className="bg-transparent w-full mx-2 px-2 focus:outline-none"
-									/>
-								</div>
-								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
-									<div className="ml-2">
-										<Image src={"/svgs/Email.svg"} width={30} height={30} alt="" />
-									</div>
-									<input
-										id="email"
-										name="email"
-										type="email"
-										placeholder="Email ID"
-										autoComplete="off"
-										value={formData.email}
-										onChange={handleChange}
-										className="bg-transparent w-full mx-2 px-2 focus:outline-none"
-									/>
-								</div>
-								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
-									<div className="ml-2">
-										<Image src={"/svgs/Message.svg"} width={30} height={30} alt="" />
-									</div>
-									<textarea
-										id="message"
-										name="message"
-										type="text"
-										placeholder="Message"
-										autoComplete="off"
-										value={formData.message}
-										onChange={handleChange}
-										className="bg-transparent w-full min-h-40 mx-2 px-2 focus:outline-none resize-y"
-									/>
-								</div>
-
-								<button
-									id="sendMailToAdi"
-									className="langar text-lg cursor-pointer bg-amber-400 text-black w-fit m-auto px-10 py-4 rounded-lg hover:opacity-80"
-								>
-									SUBMIT
-								</button>
-							</form>
 						</div>
 					</div>
 				</div>

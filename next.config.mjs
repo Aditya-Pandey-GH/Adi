@@ -10,6 +10,14 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "img.youtube.com",
 			},
+			{
+				protocol: "https",
+				hostname: "cdn.jsdelivr.net",
+			},
+			{
+				protocol: "https",
+				hostname: "upload.wikimedia.org",
+			},
 		],
 	},
 };

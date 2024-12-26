@@ -257,7 +257,7 @@ const Skills = () => {
 			},
 			id: "ppt",
 			title: "Microsoft PowerPoint",
-			logo: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg",
+			logo: "https://static.cdnlogo.com/logos/p/67/powerpoint.svg",
 			type: "Designing",
 			since: "2013",
 		},

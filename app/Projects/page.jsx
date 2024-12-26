@@ -31,7 +31,7 @@ const Projects = () => {
 			name: "Adi's Portfolio",
 			desc: "Adi's Portfolio is the portfolio website for Aditya Pandey. This website shows the entire programming journey of Aditya Pandey. What you are seeing right now is also a part of this project. This portfolio will be updated from time to time to keep it up-to-date.",
 			// lang: ["Node.js", "Express.js", "MongoDB", "React", "Cascading Style Sheets (CSS)"],
-			lang: ["Node.js", "Express.js", "React", "Cascading Style Sheets (CSS)"],
+			lang: ["Node.js", "Express.js", "React", "Next.js", "Cascading Style Sheets (CSS)", "Tailwind CSS"],
 			logo: "https://i.postimg.cc/3RGr13K4/portfolio.png",
 			link: "https://adi.vercel.app/",
 		},
@@ -205,8 +205,12 @@ const Projects = () => {
 											{web.link && (
 												<div className="flex flex-row items-center mt-2">
 													<Image src="/svgs/Site.svg" width={25} height={25} alt="Link: " className="w-6 mr-2" />
-													<Link href={web.link} className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
-														{web.link}
+													<Link
+														href={web.link}
+														title={web.link}
+														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
+													>
+														Go to site
 													</Link>
 												</div>
 											)}
@@ -273,8 +277,12 @@ const Projects = () => {
 											{app.link && (
 												<div className="flex flex-row items-center mt-2">
 													<Image src="/svgs/Site.svg" width={25} height={25} alt="Link: " className="w-6 mr-2" />
-													<Link href={app.link} className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
-														{app.link}
+													<Link
+														href={app.link}
+														title={app.link}
+														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
+													>
+														Go to Release
 													</Link>
 												</div>
 											)}
@@ -339,8 +347,12 @@ const Projects = () => {
 											{game.link && (
 												<div className="flex flex-row items-center mt-2">
 													<Image src="/svgs/Site.svg" width={25} height={25} alt="Link: " className="w-6 mr-2" />
-													<Link href={game.link} className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
-														{game.link}
+													<Link
+														href={game.link}
+														title={game.link}
+														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
+													>
+														Go to Release
 													</Link>
 												</div>
 											)}
