@@ -34,6 +34,19 @@ const Connect = () => {
 		},
 		{
 			_id: {
+				$oid: "66d0ccb96dfe6b308267c949",
+			},
+			id: "leetcode",
+			name: "LeetCode",
+			userName: "AdiPLCode",
+			qr: "/svgs/LeetCode.svg",
+			link: "https://leetcode.com/u/AdiPLCode",
+			// logo: "https://cdn.jsdelivr.net/gh/rahuldkjain/github-profile-readme-generator@master/src/images/icons/Social/leet-code.svg",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/Logos/leet-code-dark.svg",
+			msg: "Check out my coding progress on my LeetCode account.",
+		},
+		{
+			_id: {
 				$oid: "66d0ccb95dfe6b308267c947",
 			},
 			id: "yt",
@@ -41,19 +54,19 @@ const Connect = () => {
 			userName: "GameZonedYT",
 			qr: "/svgs/YT.svg",
 			link: "https://www.youtube.com/@GameZonedYT?sub_confirmation=1",
-			logo: "https://cdn.jsdelivr.net/gh/rdimascio/icons/icons/youtube.svg",
+			// logo: "https://cdn.jsdelivr.net/gh/rdimascio/icons/icons/youtube.svg",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/Logos/youtube.svg",
 			msg: "Check out my videos and thumbnails on my YouTube channel.",
 		},
 		{
 			_id: {
-				$oid: "66d0ccb96dfe6b308267c947",
+				$oid: "66d0ccb96dfe6b308267c948",
 			},
 			id: "insta",
 			name: "Instagram",
 			userName: "AdiP.Ig",
 			qr: "/svgs/Insta.svg",
 			link: "https://www.instagram.com/adip.ig",
-			// logo: "https://cdn.jsdelivr.net/gh/rdimascio/icons/icons/instagram.svg",
 			logo: "https://static.cdnlogo.com/logos/i/92/instagram.svg",
 			msg: "Check out my posts and activities on my Instagram account.",
 		},
@@ -75,26 +88,30 @@ const Connect = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		if (!formData.email || !formData.client || !formData.message) return alert("Please fill all the fields");
-		if (
-			// confirm(
-			// 	"Confirm the information to continue:\n" +
-			// 		"\nEmail ID: " +
-			// 		formData.email +
-			// 		"\nName: " +
-			// 		formData.client +
-			// 		"\nMessage:\n" +
-			// 		formData.message
-			// )
-			confirm("Press OK to confirm")
-		) {
-			const res = await (await fetch(`/api/sendMail`, { method: "POST", body: JSON.stringify(formData) })).json();
-			if (res.success) {
-				alert("Email sent successfully");
-			} else {
-				alert("Email sending failed. Please try again.");
-			}
-		}
+		prompt(
+			"This feature has been temporarily suspended for security reasons.\nCopy the following e-mail ID and send the mail directly:",
+			"adityapandey1609@gmail.com"
+		);
+		// if (!formData.email || !formData.client || !formData.message) return alert("Please fill all the fields");
+		// if (
+		// 	// confirm(
+		// 	// 	"Confirm the information to continue:\n" +
+		// 	// 		"\nEmail ID: " +
+		// 	// 		formData.email +
+		// 	// 		"\nName: " +
+		// 	// 		formData.client +
+		// 	// 		"\nMessage:\n" +
+		// 	// 		formData.message
+		// 	// )
+		// 	confirm("Press OK to confirm")
+		// ) {
+		// 	const res = await (await fetch(`/api/sendMail`, { method: "POST", body: JSON.stringify(formData) })).json();
+		// 	if (res.success) {
+		// 		alert("Email sent successfully");
+		// 	} else {
+		// 		alert("Email sending failed. Please try again.");
+		// 	}
+		// }
 	};
 
 	return (
@@ -118,6 +135,7 @@ const Connect = () => {
 										autoComplete="off"
 										value={formData.client}
 										onChange={handleChange}
+										disabled
 										className="bg-transparent w-full mx-2 px-2 focus:outline-none"
 									/>
 								</div>
@@ -133,6 +151,7 @@ const Connect = () => {
 										autoComplete="off"
 										value={formData.email}
 										onChange={handleChange}
+										disabled
 										className="bg-transparent w-full mx-2 px-2 focus:outline-none"
 									/>
 								</div>
@@ -148,6 +167,7 @@ const Connect = () => {
 										autoComplete="off"
 										value={formData.message}
 										onChange={handleChange}
+										disabled
 										className="bg-transparent w-full min-h-40 mx-2 px-2 focus:outline-none resize-y"
 									/>
 								</div>

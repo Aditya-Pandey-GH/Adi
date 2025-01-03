@@ -23,29 +23,6 @@ const Projects = () => {
 		// 	logo: "",
 		// 	link: "",
 		// },
-		{
-			_id: {
-				$oid: "66d0c8ff5dfe6b308267c942",
-			},
-			id: "adiPortfolio",
-			name: "Adi's Portfolio",
-			desc: "Adi's Portfolio is the portfolio website for Aditya Pandey. This website shows the entire programming journey of Aditya Pandey. What you are seeing right now is also a part of this project. This portfolio will be updated from time to time to keep it up-to-date.",
-			// lang: ["Node.js", "Express.js", "MongoDB", "React", "Cascading Style Sheets (CSS)"],
-			lang: ["Node.js", "Express.js", "React", "Next.js", "Cascading Style Sheets (CSS)", "Tailwind CSS"],
-			logo: "https://i.postimg.cc/3RGr13K4/portfolio.png",
-			link: "https://adipandey.vercel.app",
-		},
-		{
-			_id: {
-				$oid: "66d0d39f5dfe6b308267c94c",
-			},
-			id: "evilSimon",
-			name: "Evil Simon",
-			desc: "Evil Simon is the hard mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
-			lang: ["React.js", "Casacading Style Sheets (CSS)"],
-			logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
-			link: "https://evil-simon.vercel.app",
-		},
 		// {
 		// 	_id: {
 		// 		$oid: "66ebe20a9fa4c0a3d31551ab",
@@ -63,6 +40,29 @@ const Projects = () => {
 		// 	logo: "",
 		// 	link: "",
 		// },
+		{
+			_id: {
+				$oid: "66d0d39f5dfe6b308267c94c",
+			},
+			id: "evilSimon",
+			name: "Evil Simon",
+			desc: "Evil Simon is the hard mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
+			lang: ["React.js + Vite", "CSS"],
+			logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
+			link: "https://evil-simon.vercel.app",
+		},
+		{
+			_id: {
+				$oid: "66d0c8ff5dfe6b308267c942",
+			},
+			id: "adiPortfolio",
+			name: "Adi's Portfolio",
+			desc: "Adi's Portfolio is the portfolio website for Aditya Pandey. This website shows the entire programming journey of Aditya Pandey. What you are seeing right now is also a part of this project. This portfolio will be updated from time to time to keep it up-to-date.",
+			// lang: ["Node.js", "Express.js", "MongoDB", "React", "Cascading Style Sheets (CSS)"],
+			lang: ["Next.js", "CSS", "Tailwind CSS"],
+			logo: "https://i.postimg.cc/3RGr13K4/portfolio.png",
+			link: "https://adipandey.vercel.app",
+		},
 	]; // Websites
 	const Apps = [
 		{
@@ -111,17 +111,17 @@ const Projects = () => {
 		// 	logo: "https://i.postimg.cc/BbSC5Fbw/g12Plus.png",
 		// 	link: "",
 		// },
-		{
-			_id: {
-				$oid: "66d0d39f5dfe6b308267c94c",
-			},
-			id: "evilSimon",
-			name: "Evil Simon",
-			desc: "Evil Simon is the Hard Mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
-			lang: ["React.js", "Casacading Style Sheets (CSS)"],
-			logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
-			link: "https://evil-simon.vercel.app",
-		},
+		// {
+		// 	_id: {
+		// 		$oid: "66d0d39f5dfe6b308267c94c",
+		// 	},
+		// 	id: "evilSimon",
+		// 	name: "Evil Simon",
+		// 	desc: "Evil Simon is the Hard Mode of Simon Says game. The concept of this game is same as the original Simon Says game, but the Evil Simon has a bit of difficulty to offer, and you have to overcome that difficulty, by making and breaking high scores.",
+		// 	lang: ["React.js + Vite", "CSS"],
+		// 	logo: "https://i.postimg.cc/FR1gd0Yn/evil-Simon.png",
+		// 	link: "https://evil-simon.vercel.app",
+		// },
 		{
 			_id: {
 				$oid: "66d0c7405dfe6b308267c93f",
@@ -140,7 +140,7 @@ const Projects = () => {
 	const WebsPerPage = 3;
 	const lastWebIndex = curWebPage * WebsPerPage;
 	const firstWebIndex = lastWebIndex - WebsPerPage;
-	const currentWebs = Object.values(Websites).slice(firstWebIndex, lastWebIndex);
+	const currentWebs = Object.values(Websites.reverse()).slice(firstWebIndex, lastWebIndex);
 	const totalWebPages = Math.ceil(Object.values(Websites).length / WebsPerPage);
 	const handleWebPageChange = (pageNumber) => {
 		setCurWebPage(pageNumber);
@@ -151,7 +151,7 @@ const Projects = () => {
 	const AppsPerPage = 2;
 	const lastAppIndex = curAppPage * AppsPerPage;
 	const firstAppIndex = lastAppIndex - AppsPerPage;
-	const currentApps = Object.values(Apps).slice(firstAppIndex, lastAppIndex);
+	const currentApps = Object.values(Apps.reverse()).slice(firstAppIndex, lastAppIndex);
 	const totalAppPages = Math.ceil(Object.values(Apps).length / AppsPerPage);
 	const handleAppPageChange = (pageNumber) => {
 		setCurAppPage(pageNumber);
