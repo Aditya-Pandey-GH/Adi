@@ -89,7 +89,7 @@ const NavBar = () => {
 									onClick={() => handleNavigation(page.path)}
 									className={`${
 										pathname === page.path && "bg-gray-800"
-									} flex items-center p-4 text-base font-normal hover:bg-gray-600 hover:cursor-pointer`}
+									} flex items-center p-4 text-base font-normal hover:bg-gray-600 hover:cursor-pointer transition-colors`}
 								>
 									<Image src={page.logo} width={400} height={400} className="w-6 h-6 mr-3" alt="" />
 									{page.name}
