@@ -15,9 +15,9 @@ const Intro = () => {
 		<>
 			<div className="mainContainer flex flex-col items-center">
 				<Image src={introData.pfp} width={400} height={400} alt="Picture of the author" className="w-32 rounded-xl mb-4" />
-				<div className="khand text-2xl">{introData.name.toUpperCase()}</div>
-				<div className="iceberg text-md mb-2">{introData.dob}</div>
-				<div className="iceberg text-xl">
+				<div className="font-khand text-2xl font-bold">{introData.name.toUpperCase()}</div>
+				<div className="font-iceberg text-md mb-2">{introData.dob}</div>
+				<div className="font-iceberg text-xl">
 					I am a
 					<Typewriter profsArr={introData.profs} typingSpeed={40} deletingSpeed={40} />
 				</div>
@@ -28,7 +28,7 @@ const Intro = () => {
 				>
 					<div className="flex w-fit space-x-2">
 						<Image src="/svgs/Download.svg" width={25} height={25} alt="" className="w-4" />
-						<span className="iceberg text-lg text-green-500">Download Resume</span>
+						<span className="font-iceberg text-lg text-green-500">Download Resume</span>
 					</div>
 				</Link>
 			</div>

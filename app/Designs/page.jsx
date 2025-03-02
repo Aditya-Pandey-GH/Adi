@@ -343,7 +343,7 @@ const Designs = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">THUMBNAILS</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">THUMBNAILS</h1>
 						<div className="text-center">
 							{currentThumbs.map((thumb) => (
 								<div key={thumb._id.$oid} className="flex flex-col sm:flex-row justify-center items-center">
@@ -353,11 +353,7 @@ const Designs = () => {
 							<div className="pagination">
 								{totalThumbPages > 1 ? (
 									<>
-										<button
-											disabled={curThumbPage <= 1}
-											onClick={() => handleThumbPageChange(curThumbPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curThumbPage <= 1} onClick={() => handleThumbPageChange(curThumbPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curThumbPage}/${totalThumbPages}`}</button>
@@ -377,8 +373,8 @@ const Designs = () => {
 					</div>
 
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">NEWSLETTERS</h1>
-						<ol className="iceberg h-fit flex flex-col text-justify mt-2 ml-6 mr-2 list-decimal">
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">NEWSLETTERS</h1>
+						<ol className="font-iceberg h-fit flex flex-col text-justify mt-2 ml-6 mr-2 list-decimal">
 							{Newsletters.map((elem, index) => {
 								return (
 									<li key={index} className="my-2 hover:text-stone-400 duration-150 ease-out">
@@ -394,24 +390,20 @@ const Designs = () => {
 
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">POSTERS</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">POSTERS</h1>
 						<div className="text-center">
 							{currentPosters.map((poster) => (
 								<div key={poster._id.$oid} className="flex flex-col sm:flex-row justify-center items-center">
 									<div className="relative flex flex-col items-center aspect-w-16 aspect-h-9 mt-4">
 										<ImageLoader image={poster.logo} preview={poster.preview} />
-										<span className="iceberg mt-2 md:text-lg">{poster.title}</span>
+										<span className="font-iceberg mt-2 md:text-lg">{poster.title}</span>
 									</div>
 								</div>
 							))}
 							<div className="pagination">
 								{totalPosterPages > 1 ? (
 									<>
-										<button
-											disabled={curPosterPage <= 1}
-											onClick={() => handlePosterPageChange(curPosterPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curPosterPage <= 1} onClick={() => handlePosterPageChange(curPosterPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curPosterPage}/${totalPosterPages}`}</button>
@@ -431,24 +423,20 @@ const Designs = () => {
 					</div>
 
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">OTHER DESIGNS</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">OTHER DESIGNS</h1>
 						<div className="text-center">
 							{currentDesigns.map((design) => (
 								<div key={design._id.$oid} className="flex flex-col sm:flex-row justify-center items-center">
 									<div className="relative flex flex-col items-center aspect-w-16 aspect-h-9 mt-4">
 										<ImageLoader image={design.logo} preview={design.preview} />
-										<span className="iceberg mt-2 md:text-lg">{design.title}</span>
+										<span className="font-iceberg mt-2 md:text-lg">{design.title}</span>
 									</div>
 								</div>
 							))}
 							<div className="pagination">
 								{totalDesignPages > 1 ? (
 									<>
-										<button
-											disabled={curDesignPage <= 1}
-											onClick={() => handleDesignPageChange(curDesignPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curDesignPage <= 1} onClick={() => handleDesignPageChange(curDesignPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curDesignPage}/${totalDesignPages}`}</button>

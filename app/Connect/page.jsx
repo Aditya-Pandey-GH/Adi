@@ -88,10 +88,7 @@ const Connect = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		prompt(
-			"This feature has been temporarily suspended for security reasons.\nCopy the following e-mail ID and send the mail directly:",
-			"adityapandey1609@gmail.com"
-		);
+		prompt("This feature has been temporarily suspended for security reasons.\nCopy the following e-mail ID and send the mail directly:", "adityapandey1609@gmail.com");
 		// if (!formData.email || !formData.client || !formData.message) return alert("Please fill all the fields");
 		// if (
 		// 	// confirm(
@@ -120,8 +117,8 @@ const Connect = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">CONTACT ME</h1>
-						<div className="iceberg h-fit flex flex-col text-justify mt-4">
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">CONTACT ME</h1>
+						<div className="font-iceberg h-fit flex flex-col text-justify mt-4">
 							<form onSubmit={handleSubmit} className="text-white flex flex-col space-y-4">
 								<div className="bg-[#313a4b] flex flex-row p-2 rounded-lg">
 									<div className="ml-2">
@@ -174,7 +171,7 @@ const Connect = () => {
 
 								<button
 									id="sendMailToAdi"
-									className="langar text-lg cursor-pointer bg-amber-400 text-black w-fit m-auto px-10 py-4 rounded-lg hover:opacity-80"
+									className="font-langar text-lg cursor-pointer bg-amber-400 text-black w-fit m-auto px-10 py-4 rounded-lg hover:opacity-80"
 								>
 									SUBMIT
 								</button>
@@ -185,17 +182,14 @@ const Connect = () => {
 
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">CONNECT WITH ME</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">CONNECT WITH ME</h1>
 						{/* <div className="text-center mt-2 flex flex-wrap space-x-4 justify-center"> */}
 						<div className="text-center">
 							{SocialMedia.map((social) => {
 								return (
-									<div
-										key={social.id}
-										className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-									>
+									<div key={social.id} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
 										<div className="relative w-full sm:w-fit flex justify-center sm:justify-normal">
-											<div className="absolute top-0 right-0 iceberg sm:invisible">
+											<div className="absolute top-0 right-0 font-iceberg sm:invisible">
 												<button
 													title={`Show ${social.name} QR Code`}
 													onClick={() => setOpenModalId(social.id)}
@@ -209,7 +203,7 @@ const Connect = () => {
 											</Link>
 										</div>
 
-										<div className="w-full iceberg text-justify sm:ml-4">
+										<div className="w-full font-iceberg text-justify sm:ml-4">
 											<div className="flex flex-row items-center float-end invisible sm:visible">
 												<button
 													title={`Show ${social.name} QR Code`}
@@ -231,11 +225,7 @@ const Connect = () => {
 											<div className="mt-2">
 												<div className="flex flex-row items-center">
 													<span className="font-serif text-yellow-300">@</span>
-													<Link
-														href={social.link}
-														target="_blank"
-														className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out"
-													>
+													<Link href={social.link} target="_blank" className="text-yellow-300 hover:text-amber-500 duration-300 ease-in-out">
 														{social.userName}
 													</Link>
 												</div>
@@ -256,11 +246,10 @@ const Connect = () => {
 									// 			width={5}
 									// 			height={5}
 									// 			alt=""
-									// 			loading="lazy"
 									// 			className="bg-white rounded-lg w-40"
 									// 		/>
 									// 	</Link>
-									// 	<span className="iceberg text-amber-400">{social.name}</span>
+									// 	<span className="font-iceberg text-amber-400">{social.name}</span>
 									// </div>
 								);
 							})}

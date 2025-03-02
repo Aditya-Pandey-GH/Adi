@@ -85,7 +85,7 @@ body {
 }
 
 /* FONT MODIFICATIONS */
-@font-face {
+/* @font-face {
 	font-family: "Iceberg";
 	src: url("/fonts/Iceberg.woff2") format("woff2"), url("/fonts/Iceberg.woff") format("woff");
 	font-weight: 400;
@@ -114,7 +114,7 @@ body {
 
 .langar {
 	font-family: "Langar", sans-serif;
-}
+} */
 
 /* SCROLLBAR MODIFICATIONS */
 ::-webkit-scrollbar {

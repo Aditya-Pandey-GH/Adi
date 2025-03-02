@@ -40,7 +40,6 @@ const YouTubeLoader = ({ videoId }) => {
 					width={1280}
 					height={720}
 					alt={videoTitle}
-					loading="lazy"
 					className="bg-white p-2 rounded-2xl cursor-pointer"
 				/>
 				<div
@@ -53,7 +52,7 @@ const YouTubeLoader = ({ videoId }) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						// style={{ pointerEvents: clicked ? "auto" : "none" }} // Disable interaction when not clicked
-						className={`iceberg text-white bg-blue-500 flex flex-row px-4 py-2 rounded-lg hover:bg-gray-600 duration-200 ${
+						className={`font-iceberg text-white bg-blue-500 flex flex-row px-4 py-2 rounded-lg hover:bg-gray-600 duration-200 ${
 							clicked ? "pointer-events-auto" : "pointer-events-none"
 						}`}
 					>
@@ -65,7 +64,7 @@ const YouTubeLoader = ({ videoId }) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						// style={{ pointerEvents: clicked ? "auto" : "none" }} // Disable interaction when not clicked
-						className={`iceberg text-white bg-red-600 flex flex-row px-4 py-2 rounded-lg hover:bg-gray-600 duration-200 ${
+						className={`font-iceberg text-white bg-red-600 flex flex-row px-4 py-2 rounded-lg hover:bg-gray-600 duration-200 ${
 							clicked ? "pointer-events-auto" : "pointer-events-none"
 						}`}
 					>
@@ -76,7 +75,7 @@ const YouTubeLoader = ({ videoId }) => {
 			</div>
 
 			{/* Video Title */}
-			<span className="iceberg mt-2 md:text-lg">{videoTitle}</span>
+			<span className="font-iceberg mt-2 md:text-lg">{videoTitle}</span>
 		</div>
 	);
 };

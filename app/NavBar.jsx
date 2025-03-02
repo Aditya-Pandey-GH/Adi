@@ -67,7 +67,7 @@ const NavBar = () => {
 
 	return (
 		<>
-			<nav className="bg-[#313a4b] iceberg fixed bottom-0 md:bottom-auto w-full md:w-60 h-fit md:h-full z-50">
+			<nav className="bg-[#313a4b] font-iceberg fixed bottom-0 md:bottom-auto w-full md:w-60 h-fit md:h-full z-50">
 				{/* PC Navbar */}
 				<div className="overflow-y-auto max-h-screen hidden md:block">
 					{/* Current Page */}
@@ -80,7 +80,7 @@ const NavBar = () => {
 						</>
 					)}
 					{/* All Pages */}
-					<div className="langar mt-4">
+					<div className="font-langar mt-4">
 						{Pages.map((page) => {
 							return (
 								<div
@@ -103,13 +103,9 @@ const NavBar = () => {
 					{Pages.map((page) => {
 						return (
 							<div key={page.id} href={page.path} onClick={() => handleNavigation(page.path)}>
-								<div
-									className={`${
-										pathname === page.path && "bg-slate-600"
-									} flex flex-col items-center px-1 py-2 rounded-lg hover:cursor-pointer`}
-								>
+								<div className={`${pathname === page.path && "bg-slate-600"} flex flex-col items-center px-1 py-2 rounded-lg hover:cursor-pointer`}>
 									<Image src={page.logo} width={400} height={400} title={page.name} alt="" className="w-6 h-6" />
-									<div className="iceberg hidden sm:block">{page.name}</div>
+									<div className="font-iceberg hidden sm:block">{page.name}</div>
 								</div>
 							</div>
 						);

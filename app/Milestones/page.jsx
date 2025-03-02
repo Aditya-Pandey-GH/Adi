@@ -263,24 +263,16 @@ const Milestones = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">SOCIAL WELFARE</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">SOCIAL WELFARE</h1>
 						<div className="text-justify mt-4">
 							{currentWelfares.map((welfare) => (
 								<div key={welfare.id} className="flex flex-row h-fit m-auto m-top mt-1 px-4 pt-2 sm:flex-row justify-center">
 									<div className="mt-0.5 -ml-2 mr-4">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="#ffc700" viewBox="0 0 32 32" className="w-6">
-											<circle
-												cx="16"
-												cy="16"
-												r="10"
-												stroke="#646464"
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth="3"
-											/>
+											<circle cx="16" cy="16" r="10" stroke="#646464" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
 										</svg>
 									</div>
-									<div className="iceberg">
+									<div className="font-iceberg">
 										{welfare.title}
 										<br />
 										<span className="float-right">~ {welfare.year}</span>
@@ -290,11 +282,7 @@ const Milestones = () => {
 							<div className="pagination">
 								{totalWelfarePages > 1 ? (
 									<>
-										<button
-											disabled={curWelfarePage <= 1}
-											onClick={() => handleWelfarePageChange(curWelfarePage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curWelfarePage <= 1} onClick={() => handleWelfarePageChange(curWelfarePage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curWelfarePage}/${totalWelfarePages}`}</button>
@@ -314,19 +302,19 @@ const Milestones = () => {
 					</div>
 
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">CERTIFICATES</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">CERTIFICATES</h1>
 						<div className="text-center">
 							{currentCerts.map((cert) => (
 								<div key={cert._id.$oid} className="flex flex-col sm:flex-row justify-center items-center">
 									<div className="relative flex flex-col items-center aspect-w-16 aspect-h-9 h-full mt-4">
 										<ImageLoader title={cert.title} image={cert.logo} preview={cert.preview} bgColor="black" />
 										<div className="w-full flex flex-col">
-											<span className="iceberg m-auto mt-2 md:text-lg text-amber-400 w-fit">
+											<span className="font-iceberg m-auto mt-2 md:text-lg text-amber-400 w-fit">
 												{cert.title}
 												<hr className="border border-amber-400" />
 											</span>
-											<span className="iceberg text-justify mt-2 md:text-lg">{cert.desc}</span>
-											<ul className="iceberg list-disc text-justify mt-2 md:text-lg ml-6">
+											<span className="font-iceberg text-justify mt-2 md:text-lg">{cert.desc}</span>
+											<ul className="font-iceberg list-disc text-justify mt-2 md:text-lg ml-6">
 												<li>
 													<span>By: {cert.by}</span>
 												</li>
@@ -341,11 +329,7 @@ const Milestones = () => {
 							<div className="pagination">
 								{totalCertPages > 1 ? (
 									<>
-										<button
-											disabled={curCertPage <= 1}
-											onClick={() => handleCertPageChange(curCertPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curCertPage <= 1} onClick={() => handleCertPageChange(curCertPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curCertPage}/${totalCertPages}`}</button>
@@ -367,16 +351,13 @@ const Milestones = () => {
 
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">EXPERIENCE</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">EXPERIENCE</h1>
 						<div className="text-center">
 							{currentXPs.map((xp) => (
-								<div
-									key={xp._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
-									<Image src={xp.logo} width={75} height={75} alt="" loading="lazy" className="bg-white p-2 rounded-2xl" />
+								<div key={xp._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
+									<Image src={xp.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
+									<div className="w-full font-iceberg text-center sm:text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
 											<h2 className="text-amber-400">{xp.name}</h2>
 											<hr className="border border-amber-400" />
@@ -393,19 +374,11 @@ const Milestones = () => {
 							<div className="pagination">
 								{totalXPPages > 1 ? (
 									<>
-										<button
-											disabled={curXPPage <= 1}
-											onClick={() => handleXPPageChange(curXPPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curXPPage <= 1} onClick={() => handleXPPageChange(curXPPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curXPPage}/${totalXPPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={curXPPage >= totalXPPages}
-											onClick={() => handleXPPageChange(curXPPage + 1)}
-										>
+										<button className="paginationButton active" disabled={curXPPage >= totalXPPages} onClick={() => handleXPPageChange(curXPPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -417,13 +390,13 @@ const Milestones = () => {
 					</div>
 
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">ACHIEVEMENTS</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">ACHIEVEMENTS</h1>
 						<div className="text-center">
 							{currentAchs.map((ach) => (
 								<div key={ach.id} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
 									<Image src={ach.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-center sm:text-justify sm:ml-4">
+									<div className="w-full font-iceberg text-center sm:text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
 											<h2 className="text-amber-400">{ach.name}</h2>
 											<hr className="border border-amber-400" />
@@ -436,19 +409,11 @@ const Milestones = () => {
 							<div className="pagination">
 								{totalAchPages > 1 ? (
 									<>
-										<button
-											disabled={curAchPage <= 1}
-											onClick={() => handleAchPageChange(curAchPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curAchPage <= 1} onClick={() => handleAchPageChange(curAchPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curAchPage}/${totalAchPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={curAchPage >= totalAchPages}
-											onClick={() => handleAchPageChange(curAchPage + 1)}
-										>
+										<button className="paginationButton active" disabled={curAchPage >= totalAchPages} onClick={() => handleAchPageChange(curAchPage + 1)}>
 											{">"}
 										</button>
 									</>

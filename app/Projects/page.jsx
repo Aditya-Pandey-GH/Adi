@@ -175,16 +175,13 @@ const Projects = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">WEBSITES</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">WEBSITES</h1>
 						<div className="text-center">
 							{currentWebs.map((web) => (
-								<div
-									key={web._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
+								<div key={web._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
 									<Image src={web.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-justify sm:ml-4">
+									<div className="w-full font-iceberg text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
 											<h2 className="text-amber-400">{web.name}</h2>
 											<hr className="border border-amber-400" />
@@ -222,19 +219,11 @@ const Projects = () => {
 							<div className="pagination">
 								{totalWebPages > 1 ? (
 									<>
-										<button
-											disabled={curWebPage <= 1}
-											onClick={() => handleWebPageChange(curWebPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curWebPage <= 1} onClick={() => handleWebPageChange(curWebPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curWebPage}/${totalWebPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={curWebPage >= totalWebPages}
-											onClick={() => handleWebPageChange(curWebPage + 1)}
-										>
+										<button className="paginationButton active" disabled={curWebPage >= totalWebPages} onClick={() => handleWebPageChange(curWebPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -248,16 +237,13 @@ const Projects = () => {
 
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">APPLICATIONS</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">APPLICATIONS</h1>
 						<div className="text-center">
 							{currentApps.map((app) => (
-								<div
-									key={app._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
+								<div key={app._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
 									<Image src={app.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-justify sm:ml-4">
+									<div className="w-full font-iceberg text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
 											<h2 className="text-amber-400">{app.name}</h2>
 											<hr className="border border-amber-400" />
@@ -295,19 +281,11 @@ const Projects = () => {
 							<div className="pagination">
 								{totalAppPages > 1 ? (
 									<>
-										<button
-											disabled={curAppPage <= 1}
-											onClick={() => handleAppPageChange(curAppPage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curAppPage <= 1} onClick={() => handleAppPageChange(curAppPage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curAppPage}/${totalAppPages}`}</button>
-										<button
-											className="paginationButton active"
-											disabled={curAppPage >= totalAppPages}
-											onClick={() => handleAppPageChange(curAppPage + 1)}
-										>
+										<button className="paginationButton active" disabled={curAppPage >= totalAppPages} onClick={() => handleAppPageChange(curAppPage + 1)}>
 											{">"}
 										</button>
 									</>
@@ -319,16 +297,13 @@ const Projects = () => {
 					</div>
 
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">GAMES</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">GAMES</h1>
 						<div className="text-center">
 							{currentGames.map((game) => (
-								<div
-									key={game._id.$oid}
-									className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center"
-								>
+								<div key={game._id.$oid} className="subContainer flex flex-col sm:flex-row justify-center sm:justify-normal items-center">
 									<Image src={game.logo} width={75} height={75} alt="" className="bg-white p-2 rounded-2xl" />
 
-									<div className="w-full iceberg text-justify sm:ml-4">
+									<div className="w-full font-iceberg text-justify sm:ml-4">
 										<div className="w-fit m-auto mt-2 sm:m-0">
 											<h2 className="text-amber-400">{game.name}</h2>
 											<hr className="border border-amber-400" />
@@ -366,11 +341,7 @@ const Projects = () => {
 							<div className="pagination">
 								{totalGamePages > 1 ? (
 									<>
-										<button
-											disabled={curGamePage <= 1}
-											onClick={() => handleGamePageChange(curGamePage - 1)}
-											className="paginationButton active"
-										>
+										<button disabled={curGamePage <= 1} onClick={() => handleGamePageChange(curGamePage - 1)} className="paginationButton active">
 											{"<"}
 										</button>
 										<button className="paginationButton">{`Page ${curGamePage}/${totalGamePages}`}</button>

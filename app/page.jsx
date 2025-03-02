@@ -43,8 +43,8 @@ const Main = () => {
 				<div className="col-1">
 					<Intro />
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">WELCOME 👋</h1>
-						<ul className="iceberg h-fit flex flex-col text-justify mt-2 ml-6 mr-2">
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">WELCOME 👋</h1>
+						<ul className="font-iceberg h-fit flex flex-col text-justify mt-2 ml-6 mr-2">
 							{Welcome.map((elem, index) => {
 								return (
 									<li key={index} className="before:absolute before:content-['>'] before:-translate-x-6 pt-2">
@@ -58,16 +58,16 @@ const Main = () => {
 
 				<div className="col-2">
 					<div className="mainContainer">
-						<h1 className="langar text-amber-400 text-lg lg:text-xl">EDUCATION</h1>
+						<h1 className="font-langar text-amber-400 text-lg lg:text-xl">EDUCATION</h1>
 						<div className="h-fit flex flex-col text-justify">
 							{Education.map((edu) => {
 								return (
 									<div key={edu.id} className="subContainer">
 										<div className="w-fit">
-											<h2 className="langar text-amber-400 text-md">{edu.title.toUpperCase()}</h2>
+											<h2 className="font-langar text-amber-400 text-md">{edu.title.toUpperCase()}</h2>
 											<hr className="border border-amber-400" />
 										</div>
-										<div className="iceberg mt-2">
+										<div className="font-iceberg mt-2">
 											<div>{edu.duration}</div>
 											<div>{edu.institute}</div>
 											<div>{edu.location}</div>
