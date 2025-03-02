@@ -12,38 +12,44 @@ const NavBar = () => {
 		{
 			id: "homePage",
 			name: "Home",
+			// logo: "https://i.postimg.cc/QxvTKf0Y/home.png",
 			logo: "https://i.postimg.cc/QxvTKf0Y/home.png",
 			path: "/",
 		},
 		{
 			id: "skillPage",
 			name: "Skills",
-			logo: "https://i.postimg.cc/hjCJDsXr/skills.png",
+			// logo: "https://i.postimg.cc/hjCJDsXr/skills.png",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/PortfolioAdi/Pages/skills.png",
 			path: "/Skills",
 		},
 		{
 			id: "projPage",
 			name: "Projects",
-			logo: "https://i.postimg.cc/136NGDdm/projects.png",
+			// logo: "https://i.postimg.cc/136NGDdm/projects.png",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/PortfolioAdi/Pages/projects.png",
 			path: "/Projects",
 		},
 		{
 			id: "designPage",
 			name: "Designs",
-			logo: "https://i.postimg.cc/DzPJDnFR/gallery.png",
+			// logo: "https://i.postimg.cc/DzPJDnFR/gallery.png",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/PortfolioAdi/Pages/design.png",
 			path: "/Designs",
 		},
 		{
 			id: "milestonePage",
 			// name: "Achievements",
 			name: "Milestones",
-			logo: "https://i.postimg.cc/vZ0SChWD/achievements.png",
+			// logo: "https://i.postimg.cc/vZ0SChWD/achievements.png",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/PortfolioAdi/Pages/achievements.png",
 			path: "/Milestones",
 		},
 		{
 			id: "connectPage",
 			name: "Connect",
-			logo: "https://i.postimg.cc/s2rGwvFp/connect.png",
+			// logo: "https://i.postimg.cc/s2rGwvFp/connect.png",
+			logo: "https://cdn.jsdelivr.net/gh/GameZonedYT/Logos@main/PortfolioAdi/Pages/connect.png",
 			path: "/Connect",
 		},
 	];
@@ -52,8 +58,9 @@ const NavBar = () => {
 	if (curPage === undefined) {
 		curPage = {
 			id: "default",
-			name: "Adi",
-			logo: "https://i.postimg.cc/P5RZzv06/logo.png",
+			name: "Error",
+			// logo: "https://i.postimg.cc/P5RZzv06/logo.png",
+			logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Ban_logo.svg",
 			path: pathname,
 		};
 	}
